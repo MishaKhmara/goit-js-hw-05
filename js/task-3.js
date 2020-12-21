@@ -1,18 +1,35 @@
-function findLongestWord(string) {
-  var str = string.split(' ');
-  var longest = 0;
-  var word = null;
-  for (var i = 0; i < str.length - 1; i++) {
-    if (longest < str[i].length) {
-      longest = str[i].length;
-      word = str[i];
-    }
-  }
-  return word;
-}
+const findBestEmployee = function (employees) {
+  const values = Object.values(employees);
 
-console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+  const max = Math.max(...values);
+  const indexMax = values.indexOf(max);
+  const keyEmployee = Object.keys(employees);
 
-console.log(findLongestWord('Google do a roll')); // 'Google'
+  return keyEmployee[indexMax];
+};
 
-console.log(findLongestWord('May the force be with you')); // 'force'
+console.log(
+  findBestEmployee({
+    ann: 29,
+    david: 35,
+    helen: 1,
+    lorence: 99,
+  }),
+);
+
+console.log(
+  findBestEmployee({
+    poly: 12,
+    mango: 17,
+    ajax: 4,
+  }),
+);
+
+console.log(
+  findBestEmployee({
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38,
+  }),
+);

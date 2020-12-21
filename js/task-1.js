@@ -1,9 +1,15 @@
-const logItems = function (arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log(`${i + 1} -  ${arr[i]}`);
-  }
+const user = {
+  name: 'Mango',
+  age: 20,
+  hobby: 'html',
+  premium: true,
 };
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user.premium = false;
 
-logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+const keys = Object.keys(user);
 
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+for (const key of keys) {
+  console.log(`${key}: ${user[key]}`);
+}
