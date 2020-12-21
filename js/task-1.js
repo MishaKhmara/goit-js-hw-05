@@ -1,7 +1,6 @@
-const logItems = function (array) {
-  for (const arr of array) {
-    const idx = array.indexOf(arr);
-    console.log(`${idx + 1} -  ${arr}`);
+const logItems = function (arr) {
+  for (let i = 0; i < arr.length; i += 1) {
+    console.log(`${i + 1} -  ${arr[i]}`);
   }
 };
 
