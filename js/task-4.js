@@ -1,24 +1,28 @@
-const countTotalSalary = function (employees) {
-  const values = Object.values(employees);
-  let total = 0;
-  for (const value of values) {
-    total += value;
+class StringBuilder {
+  constructor(value) {
+    this._value = value;
   }
-  return total;
-};
+  get value() {
+    return this._value;
+  }
+  append(str) {
+    this._value = this._value + str;
+  }
+  prepend(str) {
+    this._value = str + this._value;
+  }
+  pad(str) {
+    this._value = str + this._value + str;
+  }
+}
 
-console.log(
-  countTotalSalary({
-    mango: 100,
-    poly: 150,
-    alfred: 80,
-  }),
-); // 330
+const builder = new StringBuilder(".");
 
-console.log(
-  countTotalSalary({
-    kiwi: 200,
-    lux: 50,
-    chelsy: 150,
-  }),
-); // 400
+builder.append("^");
+console.log(builder.value); // '.^'
+
+builder.prepend("^");
+console.log(builder.value); // '^.^'
+
+builder.pad("=");
+console.log(builder.value); // '=^.^='
