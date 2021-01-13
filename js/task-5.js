@@ -8,7 +8,7 @@ class Car {
   }
 
   static getSpecs(car) {
-    console.log(car);
+    console.log(car)
   }
 
   get price() {
